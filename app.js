@@ -13,8 +13,6 @@ numeros.forEach(numero => {
 
     numero.addEventListener('click', async () => {
 
-        numero.classList.toggle('marcado');
-
         const pais = numero
             .parentElement
             .querySelector('.pais')
@@ -22,17 +20,41 @@ numeros.forEach(numero => {
 
         const numeroTexto = numero.innerText;
 
-        const { error } = await supabaseClient
-            .from('marcacoes')
-            .insert([
-                {
-                    pais: pais,
-                    numero: numeroTexto,
-                    marcado: true
-                }
-            ]);
+        // VERIFICA SE ESTÁ MARCADO
+        const marcado =
+            numero.classList.contains('marcado');
 
-        console.log(error);
+        // SE JÁ ESTIVER MARCADO
+        if (marcado) {
+
+            numero.classList.remove('marcado');
+
+            await supabaseClient
+                .from('marcacoes')
+                .delete()
+                .match({
+                    pais: pais,
+                    numero: numeroTexto
+                });
+
+        }
+
+        // SE NÃO ESTIVER
+        else {
+
+            numero.classList.add('marcado');
+
+            await supabaseClient
+                .from('marcacoes')
+                .insert([
+                    {
+                        pais: pais,
+                        numero: numeroTexto,
+                        marcado: true
+                    }
+                ]);
+
+        }
 
     });
 
