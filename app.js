@@ -1,12 +1,38 @@
- const numeros = document.querySelectorAll('.numero');
+const supabaseUrl = 'https://nqyrhkkshfrrelnnjmcv.supabase.co/rest/v1/';
 
-        numeros.forEach(numero => {
+const supabaseKey = 'sb_publishable_dnl7In0JZxWhTb43tZrq_g_StxArwj6';
 
-            numero.addEventListener('click', () => {
+const supabase = window.supabase.createClient(
+  supabaseUrl,
+  supabaseKey
+ 
+const numeros = document.querySelectorAll('.numero');
 
-                numero.classList.toggle('marcado');
+numeros.forEach(numero => {
 
-            });
+    numero.addEventListener('click', async () => {
 
-        });
+        numero.classList.toggle('marcado');
 
+        const pais =
+          numero.parentElement
+          .querySelector('.pais')
+          ?.innerText;
+
+        const numeroTexto = numero.innerText;
+
+        await supabase
+          .from('marcacoes')
+          .insert({
+
+              pais: pais,
+
+              numero: numeroTexto,
+
+              marcado: true
+
+          });
+
+    });
+
+});
