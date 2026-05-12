@@ -37,3 +37,42 @@ numeros.forEach(numero => {
     });
 
 });
+
+async function carregarMarcacoes() {
+
+    const { data, error } = await supabaseClient
+        .from('marcacoes')
+        .select('*');
+
+    console.log(data);
+
+    data.forEach(item => {
+
+        const todasCelulas =
+            document.querySelectorAll('.numero');
+
+        todasCelulas.forEach(celula => {
+
+            const pais = celula
+                .parentElement
+                .querySelector('.pais')
+                ?.innerText;
+
+            const numero = celula.innerText;
+
+            if (
+                pais === item.pais &&
+                numero == item.numero
+            ) {
+
+                celula.classList.add('marcado');
+
+            }
+
+        });
+
+    });
+
+}
+
+carregarMarcacoes();
