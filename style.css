@@ -1,0 +1,156 @@
+        body {
+            font-family: Arial;
+            padding: 30px;
+
+            background-image: url('Sem título.png');
+
+            background-size: cover;
+
+            background-repeat: no-repeat;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+
+            h1 {
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                margin-bottom: 20px;
+                color: white;
+
+            }
+
+            table {
+
+            border-collapse: collapse;
+
+            width: auto;
+
+            background: white;
+            
+            display: inline-table;
+
+            }
+
+            td,
+            th {
+                border: 1px solid #999;
+                width: 40px;
+                height: 20px;
+                text-align: center;
+            }
+
+            .pais {
+                width: 180px;
+                font-weight: bold;
+                background: #eee;
+            }
+
+            .numero {
+                cursor: pointer;
+                transition: 0.2s;
+                user-select: none;
+            }
+
+            .numero:hover {
+                background: #ddd;
+            }
+
+            .marcado {
+                background: #b7ff75;
+            }
+
+            .grupo {
+                background: #b45959;
+                color: white;
+                font-weight: bold;
+                width: 80px;
+                text-align: center;
+
+            }
+
+            .grupo-a {
+                background: #81c784;
+            }
+
+            .grupo-b {
+                background: #ff8a65;
+            }
+
+            .grupo-c {
+                background: #64b5f6;
+            }
+
+            .grupo-d {
+                background: #ba68c8;
+
+            }
+
+            .grupo-e {
+                background: #81c784;
+            }
+
+            .grupo-f {
+                background: #ff8a65;
+            }
+
+            .grupo-g {
+                background: #64b5f6;
+            }
+
+            .grupo-h {
+                background: #ba68c8;
+
+            }
+
+            .grupo-i {
+                background: #81c784;
+            }
+
+            .grupo-j {
+                background: #ff8a65;
+            }
+
+            .grupo-k {
+                background: #64b5f6;
+            }
+
+            .grupo-l {
+                background: #ba68c8;
+
+    }
+
+    table {
+
+    border-collapse: collapse;
+
+    width: auto;
+
+    display: inline-table;
+
+    background: white;
+
+}
+
+td {
+
+    border: 1px solid #999;
+
+    width: 28px;
+
+    height: 28px;
+
+    text-align: center;
+
+}
+
+th {
+
+    border: 1px solid #999;
+
+    width: 40px;
+
+    height: 20px;
+
+    text-align: center;
+}
